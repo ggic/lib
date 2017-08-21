@@ -171,6 +171,7 @@
         <module>lab-duboo</module>
         <module>lab-kafka</module>
         <module>lab-mail</module>
+        <module>lab-netty</module>
     </modules>
     <distributionManagement>
         <repository>
