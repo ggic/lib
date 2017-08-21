@@ -10,7 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
- * Created by za-wangshaobo on 2017/8/21.
+ * Created by patrick on 2017/8/21.
  */
 public class DiscardServer {
 
