@@ -23,7 +23,7 @@ public class MailTest {
             // 设置邮件服务器
             javaMailSender.setHost("smtp.qq.com");
             javaMailSender.setUsername("233381335@qq.com");
-            javaMailSender.setPassword("pwianaip!");
+//            javaMailSender.setPassword("12345");
             javaMailSender.setDefaultEncoding("UTF-8");
 
             //
