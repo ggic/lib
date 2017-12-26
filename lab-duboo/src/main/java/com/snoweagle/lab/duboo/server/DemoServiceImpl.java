@@ -19,15 +19,17 @@
 // START SNIPPET: service
 package com.snoweagle.lab.duboo.server;
 
+import java.util.concurrent.TimeUnit;
+
 public class DemoServiceImpl implements DemoService {
 
-    public String sayHi(String text) {
+    public String sayHi(String text)   {
         System.out.println(Thread.currentThread().getName() + "-->sayHi called");
 
-        if (System.currentTimeMillis() % 2 == 0) {
-            throw new RuntimeException("系统错误啦~~~~");
-        }
-        return "Hello " + text;
+//        if (System.currentTimeMillis() % 2 == 0) {
+//            throw new RuntimeException("系统错误啦~~~~");
+//        }
+        return "Hello: " + text;
     }
 }
 // END SNIPPET: service

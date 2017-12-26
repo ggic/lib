@@ -21,6 +21,6 @@ package com.snoweagle.lab.duboo.server;
 
 
 public interface DemoService {
-    String sayHi(String text);
+    String sayHi(String text) ;
 }
 // END SNIPPET: service

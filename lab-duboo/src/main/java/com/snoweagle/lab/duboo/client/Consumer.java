@@ -24,6 +24,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 
 public final class Consumer {
@@ -40,8 +41,13 @@ public final class Consumer {
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {
+                    try {
+                        TimeUnit.SECONDS.sleep(2L);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     String response = client.sayHi("Joe");
-                    System.out.println(Thread.currentThread().getName() + " :Response: " + response);
+//                    System.out.println(Thread.currentThread().getName() + " :Response: " + response);
                 }
             });
         } else {

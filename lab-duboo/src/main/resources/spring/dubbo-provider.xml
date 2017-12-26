@@ -12,9 +12,11 @@
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <dubbo:protocol port="9910"/>
+    <dubbo:protocol port="9911"/>
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.snoweagle.lab.duboo.server.DemoService" ref="demoService" timeout="1000"/>
+    <dubbo:service interface="com.snoweagle.lab.duboo.server.DemoService" ref="demoService"
+                   timeout="10000"/>
 
     <bean id="demoService" class="com.snoweagle.lab.duboo.server.DemoServiceImpl"/>
+    <!--<bean id="logFilter" class="com.snoweagle.lab.duboo.LogFilter" />-->
 </beans>
