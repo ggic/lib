@@ -15,10 +15,8 @@ public class SpringRun {
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
         final DemoConf  demoConf = (DemoConf)factory.getBean("demoConf");
-        Demo2Conf demo2Conf = (Demo2Conf)factory.getBean("demo2Conf");
 
         System.out.println("demoConf:"+demoConf);
-        System.out.println("demo2Conf:"+demo2Conf);
         System.out.println(LogWorker.json(demoConf));
 
 
@@ -36,14 +34,13 @@ public class SpringRun {
                         e.printStackTrace();
                     }
                     System.out.println("------>");
-                    System.out.println(LogWorker.json(demoConf));
+                    System.out.println(LogWorker.json(DemoConf.getName()));
                     System.out.println("<------");
                 }
             }
         }).start();
 
 
-        System.out.println(LogWorker.json(demo2Conf));
 
         TimeUnit.SECONDS.sleep(1000L);
 
