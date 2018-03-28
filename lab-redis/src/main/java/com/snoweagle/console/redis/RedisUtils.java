@@ -10,7 +10,7 @@ import java.util.List;
 public class RedisUtils {
     public static void main(String[] args) {
         //Connecting to Redis server on localhost
-        Jedis jedis = new Jedis("localhost");
+        Jedis jedis = new Jedis("10.253.109.205");
         System.out.println("Connection to server sucessfully");
         //check whether server is running or not
         System.out.println("Server is running: "+jedis.ping());

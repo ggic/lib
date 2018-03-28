@@ -46,7 +46,7 @@ public final class Consumer {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    String response = client.sayHi("Joe");
+                    String response = client.sayHi("Joe"+System.currentTimeMillis());
 //                    System.out.println(Thread.currentThread().getName() + " :Response: " + response);
                 }
             });

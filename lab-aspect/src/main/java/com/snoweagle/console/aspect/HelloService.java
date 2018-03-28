@@ -5,7 +5,7 @@ package com.snoweagle.console.aspect;
  */
 public class HelloService {
     public String say(String st) {
-        System.out.println(st);
+        System.out.println("我："+st);
         return st;
     }
 }
