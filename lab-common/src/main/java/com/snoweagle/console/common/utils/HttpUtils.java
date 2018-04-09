@@ -12,6 +12,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.utils.HttpClientUtils;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -59,14 +60,21 @@ public class HttpUtils {
      * @throws IOException
      */
     public static String post(String url, Map<String, String> formMap, int timeOut) throws IOException {
-        log.info("--->[ 请求URL ][post]：" + url);
+        log.info("--->[ 请求URL ][post]：",url);
         UrlEncodedFormEntity entity = new UrlEncodedFormEntity(getPostParameterPairs(formMap), Consts.UTF_8);
         HttpPost httppost = new HttpPost(url);
         httppost.setConfig(RequestConfig.custom().setSocketTimeout(timeOut).setConnectTimeout(timeOut).build());
         httppost.setEntity(entity);
         return responseHandler(httppost);
     }
-
+    public static String post(String url, String postParams, int timeOut) throws IOException {
+        log.info("--->[ 请求URL ][post] url：{}  params:[]" , url,postParams);
+        HttpPost httppost = new HttpPost(url);
+        httppost.setConfig(RequestConfig.custom().setSocketTimeout(timeOut).setConnectTimeout(timeOut).build());
+        StringEntity entity = new StringEntity(postParams);
+        httppost.setEntity(entity);
+        return responseHandler(httppost);
+    }
     /**
      * get请求 异常返回null
      *
