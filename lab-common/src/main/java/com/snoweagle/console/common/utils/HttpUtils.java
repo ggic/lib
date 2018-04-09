@@ -134,7 +134,7 @@ public class HttpUtils {
      * @param postParams
      * @return
      */
-    public static List<NameValuePair> getPostParameterPairs(Map<String, String> postParams) {
+    private static List<NameValuePair> getPostParameterPairs(Map<String, String> postParams) {
         List<NameValuePair> result = new ArrayList<>(postParams.size());
         for (String key : postParams.keySet()) {
             result.add(new BasicNameValuePair(key, postParams.get(key)));
@@ -142,7 +142,7 @@ public class HttpUtils {
         return result;
     }
 
-    public static void fail4Null(Object str, String msg) {
+    private static void fail4Null(Object str, String msg) {
         if (str == null || StringUtils.isEmpty(String.valueOf(str)))
             throw new IllegalArgumentException(msg + "不能是空");
     }
